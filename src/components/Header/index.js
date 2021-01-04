@@ -4,6 +4,7 @@ import {
     Container,
     Inner,
     Logo,
+    Navigation,
     Text,
     TextLink,
 } from './styles/Header';
@@ -14,6 +15,13 @@ const Header = ({ children, ...restProps }) => {
             <Inner>{children}</Inner>
         </Container>
     );
+};
+
+Header.Navigation = function HeaderNavigation({
+    children,
+    ...restProps
+}) {
+    return <Navigation {...restProps}>{children}</Navigation>;
 };
 
 Header.Logo = function HeaderLogo({ to, src, ...restProps }) {
