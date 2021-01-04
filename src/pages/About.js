@@ -1,7 +1,15 @@
+import { Header, Navigation } from 'containers';
 import React from 'react';
 
 const AboutPage = () => {
-    return <div> about page</div>;
+    return (
+        <>
+            <Header>
+                <Navigation />
+            </Header>
+            <h1>Hello from about page!</h1>
+        </>
+    );
 };
 
 export default AboutPage;

@@ -1,12 +1,14 @@
-import { Header } from 'containers';
+import { Header, Navigation } from 'containers';
 import React from 'react';
 
 const HomePage = () => {
     return (
-        <div>
-            <Header />
+        <>
+            <Header>
+                <Navigation />
+            </Header>
             <h1>Hello from home page!</h1>
-        </div>
+        </>
     );
 };
 
