@@ -1,0 +1,29 @@
+/*
+* Colors
+*/
+
+$color-black: #1e1e24;
+$color-red: #92140c;
+$color-yellow: #f5df4d;
+$color-gray: #939597;
+$color-blue: #111d4a;
+$color-green: #14591d;
+
+/*
+* Breakpoints
+*/
+
+$breakpoints: (
+    xs: 20em,
+    // 320px
+    sm: 35em,
+    // 560px
+    md: 48em,
+    // 768px
+    lg: 64em,
+    // 1024px
+    xl: 80em,
+    // 1280px
+    2xl: 96em,
+    // 1536px
+);
