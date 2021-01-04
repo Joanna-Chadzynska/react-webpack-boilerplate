@@ -10,6 +10,8 @@ export const Inner = styled.header``;
 
 export const Text = styled.p``;
 
+export const Navigation = styled.nav``;
+
 export const TextLink = styled(NavLink)``;
 
 export const ButtonLink = styled(Link)``;
