@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -29,6 +28,12 @@ module.exports = {
     },
     resolve: {
         extensions: ['*', '.js', '.jsx'],
+        alias: {
+            components: path.resolve(__dirname, '../src/components'),
+            containers: path.resolve(__dirname, '../src/containers'),
+            assets: path.resolve(__dirname, '../src/assets'),
+            pages: path.resolve(__dirname, '../src/pages'),
+        },
     },
     output: {
         path: path.resolve(__dirname, '..', './build'),
