@@ -22,6 +22,9 @@ export const Text = styled.p``;
 
 export const TextLink = styled(NavLink)`
     text-transform: uppercase;
+    &.active {
+        color: blue;
+    }
 `;
 
 export const ButtonLink = styled(Link)`
@@ -58,7 +61,6 @@ export const Navigation = styled.nav`
     }
 
     @media screen and (min-width: 768px) {
-        /* the following lines are not from my video, but add Edge support */
         position: static;
         transition: none;
         transform: scale(1, 1);

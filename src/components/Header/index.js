@@ -24,6 +24,7 @@ const Header = ({ children, ...restProps }) => {
 
 Header.Navigation = function HeaderNavigation({
     children,
+
     ...restProps
 }) {
     return <Navigation {...restProps}>{children}</Navigation>;
@@ -36,6 +37,7 @@ Header.Logo = function HeaderLogo({ to, src, ...restProps }) {
 Header.ButtonLink = function HeaderButtonLink({
     children,
     to,
+
     ...restProps
 }) {
     return (
@@ -51,7 +53,7 @@ Header.TextLink = function HeaderTextLink({
     ...restProps
 }) {
     return (
-        <TextLink to={to} {...restProps}>
+        <TextLink activeClassName="active" to={to} {...restProps}>
             {children}
         </TextLink>
     );
@@ -62,12 +64,15 @@ Header.Text = function HeaderText({ children, ...restProps }) {
 };
 
 Header.NavToggleInput = function HeaderNavToggleInput({
+    isActive,
     ...restProps
 }) {
+    console.log(isActive);
     return (
         <NavToggleInput
             type="checkbox"
             id="nav-toggle"
+            $isActive={isActive}
             {...restProps}
         />
     );
