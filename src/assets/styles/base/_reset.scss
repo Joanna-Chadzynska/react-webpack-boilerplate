@@ -6,7 +6,8 @@
 
 /* Remove default padding */
 ul,
-ol {
+ol,
+body {
     padding: 0;
 }
 
@@ -26,11 +27,22 @@ dd {
     margin: 0;
 }
 
+html,
 body {
-    min-height: 100vh;
+    height: 100%;
+}
+
+body {
+    // min-height: 100vh;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -42,6 +54,11 @@ ol {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
     text-decoration-skip-ink: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Make images easier to work with */
