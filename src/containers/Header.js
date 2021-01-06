@@ -2,16 +2,11 @@ import logo from 'assets/images/logo.svg';
 import { Header } from 'components';
 import React from 'react';
 
-const HeaderContainer = ({ children }) => {
-    return (
-        <div>
-            <Header>
-                <Header.Logo src={logo} />
-                <Header.Text>hello</Header.Text>
-                {children}
-            </Header>
-        </div>
-    );
-};
+const HeaderContainer = ({ children }) => (
+    <Header>
+        <Header.Logo src={logo} />
+        {children}
+    </Header>
+);
 
 export default HeaderContainer;
