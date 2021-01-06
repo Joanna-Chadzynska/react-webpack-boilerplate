@@ -1,3 +1,4 @@
+import { Wrapper } from 'components';
 import React from 'react';
 import {
     ButtonLink,
@@ -12,7 +13,9 @@ import {
 const Header = ({ children, ...restProps }) => {
     return (
         <Container {...restProps}>
-            <Inner>{children}</Inner>
+            <Wrapper>
+                <Inner>{children}</Inner>
+            </Wrapper>
         </Container>
     );
 };
