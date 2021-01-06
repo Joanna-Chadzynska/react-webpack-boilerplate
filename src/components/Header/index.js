@@ -6,6 +6,8 @@ import {
     Inner,
     Logo,
     Navigation,
+    NavToggleInput,
+    NavToggleLabel,
     Text,
     TextLink,
 } from './styles/Header';
@@ -57,6 +59,28 @@ Header.TextLink = function HeaderTextLink({
 
 Header.Text = function HeaderText({ children, ...restProps }) {
     return <Text {...restProps}>{children}</Text>;
+};
+
+Header.NavToggleInput = function HeaderNavToggleInput({
+    ...restProps
+}) {
+    return (
+        <NavToggleInput
+            type="checkbox"
+            id="nav-toggle"
+            {...restProps}
+        />
+    );
+};
+
+Header.NavToggleLabel = function HeaderNavToggleLabel({
+    ...restProps
+}) {
+    return (
+        <NavToggleLabel htmlFor="nav-toggle" {...restProps}>
+            <span />
+        </NavToggleLabel>
+    );
 };
 
 export default Header;
