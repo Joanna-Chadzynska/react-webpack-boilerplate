@@ -5,7 +5,9 @@ import React from 'react';
 const HeaderContainer = ({ children }) => (
     <Header>
         <Header.Logo src={logo} />
+        <Header.NavToggleInput />
         {children}
+        <Header.NavToggleLabel />
     </Header>
 );
 
