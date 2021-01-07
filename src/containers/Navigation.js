@@ -1,21 +1,25 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { Header } from 'components';
 import * as ROUTES from 'constants/routes';
+import { useOnClickOutside } from 'hooks';
 import React from 'react';
-import { matchPath, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const NavContainer = () => {
     const location = useLocation();
 
-    const isActivePath = !!matchPath(location.pathname, {
-        path: location.pathname,
-        exact: true,
-    });
+    const { ref, isOpen } = useOnClickOutside();
+    // const isActivePath = !!matchPath(location.pathname, {
+    //     path: location.pathname,
+    //     exact: true,
+    // });
 
     return (
-        <>
-            <Header.NavToggleInput isActive={isActivePath} />
-            <Header.Navigation>
-                <ul>
+        <Header.NavigationWrapper navRef={ref}>
+            <Header.NavToggleInput />
+            <Header.Navigation isNavOpen={!isOpen && 'outside'}>
+                <ul ref={ref}>
                     <li>
                         <Header.TextLink exact to={ROUTES.HOME}>
                             Home
@@ -44,7 +48,7 @@ const NavContainer = () => {
                 </ul>
             </Header.Navigation>
             <Header.NavToggleLabel />
-        </>
+        </Header.NavigationWrapper>
     );
 };
 
