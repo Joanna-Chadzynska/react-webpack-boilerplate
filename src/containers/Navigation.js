@@ -18,7 +18,7 @@ const NavContainer = () => {
     return (
         <Header.NavigationWrapper navRef={ref}>
             <Header.NavToggleInput />
-            <Header.Navigation isNavOpen={!isOpen && 'outside'}>
+            <Header.Navigation>
                 <ul ref={ref}>
                     <li>
                         <Header.TextLink exact to={ROUTES.HOME}>

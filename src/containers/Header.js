@@ -2,14 +2,11 @@ import logo from 'assets/images/logo.svg';
 import { Header } from 'components';
 import React from 'react';
 
-const HeaderContainer = ({ children }) => {
-    const handleChange = (e) => {
-        console.log(e.target.checked);
-    };
+const HeaderContainer = ({ children, toggleTheme }) => {
     return (
         <Header>
             <Header.Logo src={logo} />
-            <Header.SwitchTheme toggleTheme={handleChange} />
+            <Header.SwitchTheme toggleTheme={toggleTheme} />
             {children}
         </Header>
     );
