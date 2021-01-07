@@ -2,15 +2,17 @@ import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.header`
-    background-color: yellow;
+    background-color: ${({ theme }) => theme.header};
 `;
 
 export const Inner = styled.div`
-    background-color: pink;
+    background-color: ${({ theme }) => theme.header};
+    color: ${({ theme }) => theme.textReverse};
     position: fixed;
     z-index: 999;
     width: 100%;
     display: flex;
+    padding: 0.5em 0;
     @media screen and (min-width: 768px) {
         justify-content: space-between;
         align-items: center;
@@ -22,17 +24,21 @@ export const Text = styled.p``;
 
 export const TextLink = styled(NavLink)`
     text-transform: uppercase;
+    font-size: clamp(1rem, 5vw, 1.1rem);
+    font-weight: 600;
     &.active {
-        color: blue;
+        color: ${({ theme }) => theme.colors.red};
     }
 `;
 
 export const ButtonLink = styled(Link)`
-    background-color: blue;
+    background-color: ${({ theme }) => theme.button};
     border-radius: 5px;
-    color: #fff;
+    font-weight: 500;
+    font-size: clamp(1rem, 5vw, 1.1rem);
+    color: ${({ theme }) => theme.text};
     text-transform: uppercase;
-    padding: 0.5em 1em;
+    padding: 0.45em 0.875em;
 `;
 
 export const NavigationWrapper = styled.div``;
@@ -43,11 +49,10 @@ export const Navigation = styled.nav`
     top: 100%;
     right: 0;
     width: 100%;
-    background-color: pink;
     transform: scale(1, 0);
     transform-origin: top;
     transition: transform 400ms ease-in-out;
-
+    background-color: ${({ theme }) => theme.header};
     &.outside {
         transform: scale(1, 0);
     }

@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.footer`
     flex-shrink: 0;
     text-align: center;
-    background-color: pink;
+    background-color: ${({ theme }) => theme.header};
+    color: ${({ theme }) => theme.textReverse};
 `;
 
 export const Inner = styled.div`
@@ -19,6 +20,24 @@ export const Inner = styled.div`
     }
 `;
 
-export const Text = styled.p``;
+export const Text = styled.p`
+    font-size: clamp(1rem, 5vw, 1.25rem);
+`;
 
-export const Link = styled.a``;
+export const Link = styled.a`
+    svg {
+        font-size: clamp(1.35rem, 5vw, 1.75rem);
+        transition: fill 250ms ease;
+
+        &:hover {
+            fill: red;
+        }
+    }
+`;
+
+export const Group = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+`;

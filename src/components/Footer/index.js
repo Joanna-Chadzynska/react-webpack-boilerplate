@@ -1,6 +1,6 @@
 import { Wrapper } from 'components';
 import React from 'react';
-import { Container, Inner, Link, Text } from './styles/Footer';
+import { Container, Group, Inner, Link, Text } from './styles/Footer';
 
 const Footer = ({ children, ...restProps }) => {
     return (
@@ -12,12 +12,20 @@ const Footer = ({ children, ...restProps }) => {
     );
 };
 
-Footer.Text = function HeaderText({ children, ...restProps }) {
+Footer.Text = function FooterText({ children, ...restProps }) {
     return <Text {...restProps}>{children}</Text>;
 };
 
-Footer.Link = function HeaderLink({ children, ...restProps }) {
-    return <Link {...restProps}>{children}</Link>;
+Footer.Group = function FooterGroup({ children, ...restProps }) {
+    return <Group {...restProps}>{children}</Group>;
+};
+
+Footer.Link = function FooterLink({ children, src, ...restProps }) {
+    return (
+        <Link href={src} target="_blank" {...restProps}>
+            {children}
+        </Link>
+    );
 };
 
 export default Footer;

@@ -98,7 +98,7 @@ Header.SwitchTheme = function HeaderSwitchTheme({
         <SwitchTheme {...restProps}>
             <SwitchThemeInner>
                 <SwitchThemeInput
-                    onChange={toggleTheme}
+                    onClick={toggleTheme}
                     type="checkbox"
                     id="switch-1"
                 />
