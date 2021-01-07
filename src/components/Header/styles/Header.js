@@ -35,6 +35,8 @@ export const ButtonLink = styled(Link)`
     padding: 0.5em 1em;
 `;
 
+export const NavigationWrapper = styled.div``;
+
 export const Navigation = styled.nav`
     position: absolute;
     text-align: right;
@@ -45,6 +47,10 @@ export const Navigation = styled.nav`
     transform: scale(1, 0);
     transform-origin: top;
     transition: transform 400ms ease-in-out;
+
+    &.outside {
+        transform: scale(1, 0);
+    }
 
     ul {
         margin: 0;
@@ -143,5 +149,64 @@ export const Logo = styled.img`
     margin-left: 1em;
     @media screen and (min-width: 768px) {
         margin-left: 0;
+    }
+`;
+
+export const SwitchTheme = styled.form`
+    align-self: center;
+    margin-left: 2em;
+`;
+
+export const SwitchThemeInner = styled.div`
+    position: relative;
+    display: inline-block;
+`;
+
+export const SwitchThemeLabel = styled.label`
+    clip: rect(0 0 0 0);
+    display: block;
+    width: 3rem;
+    height: 1.5rem;
+    color: transparent;
+    text-indent: -150%;
+    user-select: none;
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        cursor: pointer;
+    }
+
+    &::before {
+        width: 100%;
+        height: 100%;
+        background-color: #dedede;
+        border-radius: 9999em;
+        transition: background-color 0.25s ease;
+    }
+
+    &::after {
+        top: 0;
+        left: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background-color: #ffffff;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+        transition: left 0.25s ease;
+    }
+`;
+
+export const SwitchThemeInput = styled.input`
+    display: none;
+
+    &:checked ~ ${SwitchThemeLabel}::before {
+        background-color: #89c12d;
+    }
+
+    &:checked ~ ${SwitchThemeLabel}::after {
+        left: 1.5rem;
     }
 `;
